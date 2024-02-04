@@ -1,6 +1,6 @@
 {
   "name": "@gardenjs/render-plugin-svelte",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha01",
   "description": "Plugin for rendering svelte components in gardenjs",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "plugin",
     "svelte"
   ],
-  "author": "",
+  "author": "Robin Danzinger",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gardenjs/render-plugin-svelte/issues"
