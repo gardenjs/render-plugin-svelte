@@ -4,6 +4,7 @@
   export let selectedExample
   export let das
   export let afterRenderHook = async () => {}
+  export let decorators = []
 
   let redirectData = {}
   $: {
@@ -13,7 +14,9 @@
   }
 
   onMount(async () => {
-    await afterRenderHook()
+    if (decorators.length === 0) {
+      await afterRenderHook()
+    }
   })
 
   function handleComponentOut(evt) {
@@ -30,9 +33,21 @@
   }
 </script>
 
-<svelte:component
-  this={component}
-  {...selectedExample?.input}
-  {...redirectData}
-  on:out={handleComponentOut}
-/>
+{#if decorators.length > 0}
+  <svelte:component this={decorators[0]}>
+    <svelte:self
+      {component}
+      {selectedExample}
+      {das}
+      {afterRenderHook}
+      decorators={decorators.slice(1)}
+    />
+  </svelte:component>
+{:else}
+  <svelte:component
+    this={component}
+    {...selectedExample?.input}
+    {...redirectData}
+    on:out={handleComponentOut}
+  />
+{/if}

@@ -1,6 +1,6 @@
 {
   "name": "@gardenjs/render-plugin-svelte",
-  "version": "0.0.1-alpha03",
+  "version": "0.0.1-alpha04",
   "description": "Plugin for rendering svelte components in gardenjs",
   "type": "module",
   "scripts": {

@@ -1,12 +1,11 @@
-async function create(afterRenderHook) {
+async function create(afterRenderHook, decorators) {
   try {
     const { default: SvelteRenderer } = await import(
       './src/SvelteRenderer.svelte'
     )
-    console.log('DEBUG garden_app?', document.getElementById('garden_app'))
     let app = new SvelteRenderer({
       target: document.getElementById('garden_app'),
-      props: { afterRenderHook },
+      props: { afterRenderHook, decorators },
     })
     return {
       destroy: () => app?.$destroy?.(),
@@ -14,7 +13,7 @@ async function create(afterRenderHook) {
         app?.$destroy?.()
         app = new SvelteRenderer({
           target: document.getElementById('garden_app'),
-          props: { ...props, afterRenderHook },
+          props: { ...props, afterRenderHook, decorators },
         })
       },
     }
