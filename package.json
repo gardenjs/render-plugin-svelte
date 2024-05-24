@@ -1,6 +1,6 @@
 {
   "name": "@gardenjs/render-plugin-svelte",
-  "version": "0.0.1-alpha04",
+  "version": "0.0.1-alpha05",
   "description": "Plugin for rendering svelte components in gardenjs",
   "type": "module",
   "scripts": {
@@ -39,5 +39,9 @@
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },
-  "main": "index.js"
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./mocks/*": "./src/sveltekit_mocks/*"
+  }
 }
