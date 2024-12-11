@@ -1,6 +1,6 @@
 {
   "name": "@gardenjs/render-plugin-svelte",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Plugin for rendering svelte components in gardenjs",
   "type": "module",
   "scripts": {
@@ -25,16 +25,16 @@
   },
   "homepage": "https://github.com/gardenjs/render-plugin-svelte#readme",
   "devDependencies": {
-    "eslint": "^8.56.0",
+    "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-svelte": "^2.35.1",
+    "eslint-plugin-svelte": "^2.36.0",
     "husky": "^9.0.10",
     "lint-staged": "^15.2.1",
-    "prettier": "^3.2.5",
-    "prettier-plugin-svelte": "^3.1.2"
+    "prettier": "^3.3.2",
+    "prettier-plugin-svelte": "^3.2.6"
   },
   "dependencies": {
-    "svelte": "^4.2.9"
+    "svelte": "^5.0.0"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

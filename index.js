@@ -1,16 +1,18 @@
+import { mount, unmount } from 'svelte'
+
 async function create() {
   try {
     const { default: SvelteRenderer } = await import(
       './src/SvelteRenderer.svelte'
     )
-    let app = new SvelteRenderer({
+    let app = mount(SvelteRenderer, {
       target: document.getElementById('garden_app'),
     })
     return {
-      destroy: () => app?.$destroy?.(),
+      destroy: () => unmount(app),
       updateComponent: (props) => {
-        app?.$destroy?.()
-        app = new SvelteRenderer({
+        unmount(app)
+        app = mount(SvelteRenderer, {
           target: document.getElementById('garden_app'),
           props: { ...props },
         })
