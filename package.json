@@ -16,7 +16,9 @@
     "gardenjs",
     "render",
     "plugin",
-    "svelte"
+    "svelte",
+    "sveltekit",
+    "kit"
   ],
   "author": "Robin Danzinger",
   "license": "MIT",
