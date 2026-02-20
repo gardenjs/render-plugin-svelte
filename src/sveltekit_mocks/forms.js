@@ -1,5 +1,8 @@
+import {inform} from './inform'
+const info = inform('forms')
+
 export let applyAction = () => {
-  console.log('mock action called. $app/forms -> applyAction')
+  info('applyAction')
 }
 
 export const setApplyAction = (value) => {
@@ -7,7 +10,7 @@ export const setApplyAction = (value) => {
 }
 
 export let deserialize = () => {
-  console.log('mock action called. $app/forms -> deserialize')
+  info('deserialize')
 }
 
 export const setDeserialize = (value) => {
@@ -15,7 +18,7 @@ export const setDeserialize = (value) => {
 }
 
 export let enhance = () => {
-  console.log('mock action called. $app/forms -> enhance')
+  info('enhance')
 }
 
 export const setEnhance = (value) => {
