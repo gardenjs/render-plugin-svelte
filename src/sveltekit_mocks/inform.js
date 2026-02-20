@@ -5,7 +5,7 @@ function capitalizeWord(word) {
   return word
 }
 
-export const inform = (package) => (propName) => {
-  const message = `Mocked Sveltekit object $app/${package}.${propName} was called. You can customize the mocked function by overriding the value. Use $app/${package}.set${capitalizeWord(propName)}`
+export const inform = (filename) => (propName) => {
+  const message = `Mocked Sveltekit object $app/${filename}.${propName} was called. You can customize the mocked function by overriding the value. Use $app/${filename}.set${capitalizeWord(propName)}`
   console.log(message)
 }
